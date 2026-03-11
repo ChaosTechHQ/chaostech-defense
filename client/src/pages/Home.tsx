@@ -9,7 +9,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Shield, Radio, Cpu, Lock, ChevronDown, ExternalLink, Send, Menu, X, Building2, FileCheck, Phone } from "lucide-react";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663422062124/RpUN6jWxrH52tDrkQ9hGXs/chaostech-logo_95e793b4.png";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663422062124/RpUN6jWxrH52tDrkQ9hGXs/chaostech-logo-pro_2ed9c335.png";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663422062124/RpUN6jWxrH52tDrkQ9hGXs/hero-bg-k5E4kdhukR7of9SyGQpTvt.png";
 const TECH_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663422062124/RpUN6jWxrH52tDrkQ9hGXs/tech-section-bg-cyNXxVBTcwbdf5E29dAweD.png";
 
