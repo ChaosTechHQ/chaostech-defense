@@ -666,7 +666,7 @@ function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
     
@@ -676,7 +676,7 @@ function Contact() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formData ),
       });
       
       if (response.ok) {
@@ -697,6 +697,7 @@ function Contact() {
       console.error("Form submission error:", error);
     }
   };
+
 
   const inputStyle: React.CSSProperties = {
     width: "100%",
