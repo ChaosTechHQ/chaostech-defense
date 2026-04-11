@@ -669,10 +669,33 @@ function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    // Simulate form submission
-    await new Promise((r) => setTimeout(r, 1200));
-    setSubmitting(false);
-    setSubmitted(true);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/mreonyna", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        setSubmitting(false);
+        setSubmitted(true);
+        // Reset form after 5 seconds
+        setTimeout(() => {
+          setFormData({ name: "", email: "", role: "", message: "" });
+          setSubmitted(false);
+        }, 5000);
+      } else {
+        setSubmitting(false);
+        alert("Failed to send request. Please try again or email us directly.");
+      }
+    } catch (error) {
+      setSubmitting(false);
+      alert("Error sending request. Please try again or email us directly.");
+      console.error("Form submission error:", error);
+    }
   };
 
   const inputStyle: React.CSSProperties = {
