@@ -152,6 +152,7 @@ function vitePluginManusDebugCollector(): Plugin {
 const plugins = [react(), tailwindcss(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
 
 export default defineConfig({
+    base: '/chaostech-defense/',
   plugins,
   resolve: {
     alias: {
