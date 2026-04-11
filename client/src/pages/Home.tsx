@@ -679,7 +679,7 @@ function Contact() {
         body: JSON.stringify({ ...formData, access_key: "f0b4c15e-26ad-4cb5-8417-158d28a299c6" }),
       });
       
-      if (response.ok) {
+      const data = await response.json();       if (data.success) {
         setSubmitting(false);
         setSubmitted(true);
         // Reset form after 5 seconds
