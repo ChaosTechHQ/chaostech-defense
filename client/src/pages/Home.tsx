@@ -674,9 +674,9 @@ function Contact() {
       const response = await fetch("https://formspree.io/f/mbdpnbay", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",             "Accept": "application/json",
+          Accept: application/json
         },
-        body: JSON.stringify(formData ),
+        body: new FormData(e.target as HTMLFormElement),
       });
       
       if (response.ok) {
