@@ -671,12 +671,12 @@ function Contact() {
     setSubmitting(true);
     
     try {
-      const response = await fetch("https://formspree.io/f/mbdpnbay", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
-          Accept: application/json
+          "Content-Type": "application/json",             "Accept": "application/json"
         },
-        body: new FormData(e.target as HTMLFormElement),
+        body: JSON.stringify({ ...formData, access_key: "f0b4c15e-26ad-4cb5-8417-158d28a299c6" }),
       });
       
       if (response.ok) {
