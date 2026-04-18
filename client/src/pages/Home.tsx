@@ -25,8 +25,6 @@ function Nav() {
   }, []);
 
   const links = [
-    { label: "Product", href: "/product" },
-    { label: "Tech Specs", href: "/specs" },
     { label: "Mission", href: "#mission" },
     { label: "Technology", href: "#technology" },
     { label: "About", href: "#about" },
@@ -670,68 +668,12 @@ function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validate required fields
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim() || !formData.role) {
-      alert("Please fill in all required fields.");
-      return;
-    }
-    
     setSubmitting(true);
-    
-    try {
-      // Send to Formspree endpoint
-      const response = await fetch("https://formspree.io/f/mreonyna", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      
-      // Only show success if response is actually successful
-      if (response.ok) {
-        try {
-          const data = await response.json();
-          // Formspree returns { ok: true } on success
-          if (data.ok === true) {
-            setSubmitting(false);
-            setSubmitted(true);
-            // Reset form after 5 seconds
-            setTimeout(() => {
-              setFormData({ name: "", email: "", role: "", message: "" });
-              setSubmitted(false);
-            }, 5000);
-          } else {
-            throw new Error("Invalid response from server");
-          }
-        } catch (parseError) {
-          setSubmitting(false);
-          alert("Error processing response. Please try again or email us directly at DaivonBrown@chaostechdefensellc.com");
-          console.error("Response parse error:", parseError);
-        }
-      } else {
-        // Handle non-200 responses
-        setSubmitting(false);
-        let errorMessage = "Failed to send request";
-        try {
-          const errorData = await response.json();
-          errorMessage = errorData.error || errorData.message || errorMessage;
-        } catch (e) {
-          // If we can't parse error response, use generic message
-        }
-        alert(`${errorMessage}\n\nPlease try again or email us directly at DaivonBrown@chaostechdefensellc.com`);
-        console.error("Form submission failed:", { status: response.status, error: errorMessage });
-      }
-    } catch (error) {
-      setSubmitting(false);
-      const errorMsg = error instanceof Error ? error.message : "Unknown error";
-      alert(`Error sending request: ${errorMsg}\n\nPlease try again or email us directly at DaivonBrown@chaostechdefensellc.com`);
-      console.error("Form submission error:", error);
-    }
+    // Simulate form submission
+    await new Promise((r) => setTimeout(r, 1200));
+    setSubmitting(false);
+    setSubmitted(true);
   };
-
 
   const inputStyle: React.CSSProperties = {
     width: "100%",
