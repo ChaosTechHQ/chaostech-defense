@@ -25,6 +25,8 @@ function Nav() {
   }, []);
 
   const links = [
+    { label: "Product", href: "/product" },
+    { label: "Tech Specs", href: "/specs" },
     { label: "Mission", href: "#mission" },
     { label: "Technology", href: "#technology" },
     { label: "About", href: "#about" },
