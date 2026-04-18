@@ -12,23 +12,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 function AppRouter() {
   return (
-<<<<<<< Updated upstream
     <Router base={base}>
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/product" component={Product} />
+        <Route path="/specs" component={Specs} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>
     </Router>
-=======
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/product"} component={Product} />
-      <Route path={"/specs"} component={Specs} />
-      <Route path={"/404"} component={NotFound} />
-      <Route component={NotFound} />
-    </Switch>
->>>>>>> Stashed changes
   );
 }
 
