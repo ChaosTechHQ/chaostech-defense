@@ -85,32 +85,53 @@ export default function App() {
 
       {/* HERO */}
       <section className="tactical-grid min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#080808] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-500/3 rounded-full blur-3xl pointer-events-none" />
-        <div className="relative z-10 max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-green-500/30 bg-green-500/5 text-green-400 text-xs tracking-widest mb-8">
-            <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-            SYSTEM ACTIVE — NSD PROTOTYPE v1.0
-          </div>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-none">
-            AI-POWERED PASSIVE<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">RF WARFARE</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-neutral-400 font-light mb-4 max-w-3xl mx-auto">
-            For the Modern Battlefield
-          </p>
-          <p className="text-neutral-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-            The Neuro Swarm Disruptor detects, classifies, and neutralizes coordinated drone threats using passive RF sensing and on-device AI — no radar signature, no cloud dependency, no delay.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#system" className="px-8 py-3 bg-green-500 text-black font-bold tracking-widest text-sm hover:bg-green-400 transition-colors">VIEW THE SYSTEM</a>
-            <a href="#contact" className="px-8 py-3 border border-neutral-700 text-neutral-300 font-bold tracking-widest text-sm hover:border-neutral-500 transition-colors">REQUEST BRIEFING</a>
-          </div>
-        </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-6 h-6 text-neutral-600" />
-        </div>
-      </section>
+  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#080808] pointer-events-none" />
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-500/3 rounded-full blur-3xl pointer-events-none" />
+  <div className="relative z-10 max-w-5xl mx-auto">
+    <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-green-500/30 bg-green-500/5 text-green-400 text-xs tracking-widest mb-8">
+      <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+      SYSTEM ACTIVE — NSD PROTOTYPE v1.0 | TRL 4–5 PATH TO TRL 6
+    </div>
+
+    <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-none">
+      AI-POWERED PASSIVE RF
+      <br />
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
+        COUNTER-UAS FOR DRONE SWARMS
+      </span>
+    </h1>
+
+    <p className="text-xl md:text-2xl text-neutral-400 font-light mb-4 max-w-3xl mx-auto">
+      Closing the gap between low-cost drone swarms and today&apos;s legacy C-UAS inventory.
+    </p>
+
+    <p className="text-neutral-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+      The Neuro Swarm Disruptor (NSD) is a passive RF-first, AI-enabled counter-UAS system designed to detect,
+      classify, and disrupt coordinated drone swarms at the tactical edge. It runs on low-SWaP COTS hardware,
+      requires no radar emissions or cloud connectivity, and is built to plug into the rapid prototyping and
+      experimentation pipelines used by SBIR, DIU, and JCO stakeholders.
+    </p>
+
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="#system"
+        className="px-8 py-3 bg-green-500 text-black font-bold tracking-widest text-sm hover:bg-green-400 transition-colors"
+      >
+        VIEW THE SYSTEM
+      </a>
+      <a
+        href="mailto:DaivonBrown@ChaosTechDefenseLLC.com?subject=Request%20NSD%20One-Pager"
+        className="px-8 py-3 border border-neutral-700 text-neutral-300 font-bold tracking-widest text-sm hover:border-neutral-500 transition-colors"
+      >
+        DOWNLOAD ONE-PAGER
+      </a>
+    </div>
+  </div>
+
+  <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <ChevronDown className="w-6 h-6 text-neutral-600" />
+  </div>
+</section>
 
       {/* THREAT LANDSCAPE */}
       <section className="py-16 bg-[#0a0a0a] border-y border-neutral-800/50">
@@ -131,24 +152,31 @@ export default function App() {
       </section>
 
       {/* SYSTEM SPECS */}
-      <section id="system" className="py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="text-xs tracking-widest text-green-400 mb-3">NEURO SWARM DISRUPTOR</div>
-            <h2 className="text-4xl font-black tracking-tight mb-4">The NSD System</h2>
-            <p className="text-neutral-400 max-w-2xl mx-auto">A passive RF-first, AI-driven counter-UAS platform engineered to detect, classify, and disrupt drone swarms at the speed of the threat.</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-800">
-            {NSD_SPECS.map((spec, i) => (
-              <div key={i} className="bg-[#080808] p-8 text-center hover:bg-[#0f0f0f] transition-colors scan-line">
-                <div className="text-3xl font-black text-green-400 mb-2 font-mono">{spec.value}</div>
-                <div className="text-sm font-semibold text-neutral-200 mb-1">{spec.label}</div>
-                <div className="text-xs text-neutral-500">{spec.sub}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section id="mission" className="py-24 px-6 tactical-grid">
+  <div className="max-w-4xl mx-auto text-center">
+    <div className="text-xs tracking-widest text-green-400 mb-3">OUR MISSION</div>
+    <h2 className="text-4xl font-black tracking-tight mb-8">
+      Built for the Realities
+      <br />
+      of Modern Swarm Warfare
+    </h2>
+
+    <p className="text-neutral-300 text-lg leading-relaxed mb-6">
+      Autonomous and semi-autonomous drone swarms are evolving faster than traditional acquisition cycles,
+      stressing base defense, forward operating sites, and critical infrastructure protection. Program
+      offices are being asked to counter low-cost, AI-coordinated UAS with systems that were never designed
+      for dense, distributed RF environments.
+    </p>
+
+    <p className="text-neutral-400 leading-relaxed">
+      ChaosTech Defense built the Neuro Swarm Disruptor to be evaluated, instrumented, and iterated in those
+      environments. NSD is a ground-up passive RF counter-UAS system optimized for swarm signatures,
+      command-and-control links, and coordination protocols—not a repackaged commercial sensor. It is scoped
+      for rapid prototyping, limited objective experiments, and early-stage operational assessments under
+      SBIR, DIU, and JCO-aligned efforts, with a clear path toward transition into enduring C-UAS architectures.
+    </p>
+  </div>
+</section>
 
       {/* TECHNOLOGY */}
       <section id="technology" className="py-24 px-6 bg-[#0a0a0a]">
@@ -196,28 +224,43 @@ export default function App() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-24 px-6 bg-[#0a0a0a]">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-xs tracking-widest text-green-400 mb-3 text-center">LEADERSHIP</div>
-          <h2 className="text-4xl font-black tracking-tight mb-12 text-center">About the Founder</h2>
-          <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="w-32 h-32 rounded-full bg-neutral-800 border-2 border-green-500/30 flex items-center justify-center shrink-0 text-4xl font-black text-green-400">DB</div>
-            <div>
-              <h3 className="text-2xl font-bold mb-1">Daivon M. Brown</h3>
-              <div className="text-green-400 text-sm tracking-widest mb-6">CEO & FOUNDER — CHAOSTECH DEFENSE LLC</div>
-              <p className="text-neutral-300 leading-relaxed mb-4">
-                Daivon M. Brown is the CEO and Founder of ChaosTech Defense LLC, focused on next-generation counter-drone systems engineered for the realities of modern swarm warfare.
-              </p>
-              <p className="text-neutral-400 leading-relaxed mb-4">
-                He launched the company in response to the rapid evolution of autonomous drone threats, where traditional defense methods are failing to scale against decentralized, AI-driven attacks.
-              </p>
-              <p className="text-neutral-400 leading-relaxed">
-                His work centers on developing adaptive, chaos-based signal disruption technologies designed to outmaneuver and neutralize emerging aerial threats in real time.
-              </p>
-            </div>
-          </div>
+     <section id="about" className="py-24 px-6 bg-[#0a0a0a]">
+  <div className="max-w-5xl mx-auto">
+    <div className="text-xs tracking-widest text-green-400 mb-3 text-center">LEADERSHIP</div>
+    <h2 className="text-4xl font-black tracking-tight mb-12 text-center">About the Founder</h2>
+    <div className="flex flex-col md:flex-row gap-12 items-center">
+      <div className="w-32 h-32 rounded-full bg-neutral-800 border-2 border-green-500/30 flex items-center justify-center shrink-0 text-4xl font-black text-green-400">
+        DB
+      </div>
+      <div>
+        <h3 className="text-2xl font-bold mb-1">Daivon M. Brown</h3>
+        <div className="text-green-400 text-sm tracking-widest mb-6">
+          CEO &amp; FOUNDER — CHAOSTECH DEFENSE LLC
         </div>
-      </section>
+
+        <p className="text-neutral-300 leading-relaxed mb-4">
+          Daivon M. Brown is the founder of ChaosTech Defense LLC, a small, fast-moving defense technology
+          company focused on RF-centric counter-UAS systems for swarm threats. He operates at the intersection
+          of software-defined radio, embedded AI, and operationally realistic test and evaluation.
+        </p>
+
+        <p className="text-neutral-400 leading-relaxed mb-4">
+          He launched ChaosTech Defense in response to what program managers, test ranges, and operators are
+          already seeing: low-cost drones, rapid iteration cycles by adversaries, and a growing gap between
+          experimentation-grade solutions and fieldable capabilities. NSD is his answer to that gap—a system
+          deliberately shaped for SBIR, DIU, and JCO-style evaluation environments, not just lab demos.
+        </p>
+
+        <p className="text-neutral-400 leading-relaxed">
+          His work centers on building and fielding actual prototypes with measurable performance, not slideware:
+          instrumented RF sensing, on-device classification, and swarm-focused disruption concepts that can be
+          evaluated against real threat profiles, integrated with existing C-UAS architectures, and iterated
+          quickly inside government experimentation pipelines.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* CONTACT */}
       <section id="contact" className="py-24 px-6">
